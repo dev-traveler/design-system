@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "esbuild src/index.js --minify --format=cjs --bundle --outfile=dist/index.js"
   },
