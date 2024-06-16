@@ -8,7 +8,7 @@ const toCssString = (str) => {
     .toLowerCase();
 };
 
-const generateThemeCSSVariables = () => {
+const generateThemeCssVariables = () => {
   const cssString = [];
 
   Object.entries(themes.vars).forEach(([key, value]) => {
@@ -28,7 +28,9 @@ const generateThemeCSSVariables = () => {
             )
             .join('\n\n');
 
-          cssString.push(`${selector} {\n${cssVariables}\n}`);
+          cssString.push(`${selector} {\n${cssVariables}\n}\n`);
+
+          return;
         }
 
         if (theme === 'dark') {
@@ -46,17 +48,67 @@ const generateThemeCSSVariables = () => {
             .join('\n\n');
 
           cssString.push(`${selector} {\n${cssVariables}\n}\n`);
+
+          return;
         }
       });
+
+      return;
     }
+
+    const selector = ':root';
+
+    const cssVariables = Object.entries(value)
+      .map(([property, scales]) =>
+        Object.entries(scales)
+          .map(
+            ([scale, value]) =>
+              `  --${toCssString(property)}-${scale}: ${value};`
+          )
+          .join('\n')
+      )
+      .join('\n\n');
+
+    cssString.push(`${selector} {\n${cssVariables}\n}\n`);
+
+    return;
   });
 
   return cssString.join('\n');
 };
 
-const generateThemeCSS = () => {
-  const variables = generateThemeCSSVariables();
-  fs.writeFileSync('dist/themes.css', variables);
+const generateThemeCssClasses = () => {
+  const cssString = [];
+
+  Object.entries(themes.classes).forEach(([_, value]) => {
+    const cssClasses = Object.entries(value)
+      .map(([mainKey, mainValue]) =>
+        Object.entries(mainValue)
+          .map(([subKey, subValue]) => {
+            const className = `.${toCssString(mainKey)}-${toCssString(subKey)}`;
+            const styleProperties = Object.entries(subValue)
+              .map(
+                ([property, value]) => `  ${toCssString(property)}: ${value};`
+              )
+              .join('\n');
+
+            return `${className} {\n${styleProperties}\n}\n`;
+          })
+          .join('\n')
+      )
+      .join('\n');
+
+    cssString.push(cssClasses);
+  });
+
+  return cssString.join('\n');
 };
 
-generateThemeCSS();
+const generateThemeCss = () => {
+  const variables = generateThemeCssVariables();
+  const classes = generateThemeCssClasses();
+
+  fs.writeFileSync('dist/themes.css', [variables, classes].join('\n'));
+};
+
+generateThemeCss();
