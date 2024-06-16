@@ -22,13 +22,30 @@ const generateThemeCSSVariables = () => {
               Object.entries(scales)
                 .map(
                   ([scale, value]) =>
-                    `  --${theme}-${toCssString(color)}-${scale}: ${value};`
+                    `  --${toCssString(color)}-${scale}: ${value};`
                 )
                 .join('\n')
             )
             .join('\n\n');
 
           cssString.push(`${selector} {\n${cssVariables}\n}`);
+        }
+
+        if (theme === 'dark') {
+          const selector = ':root .theme-dark';
+
+          const cssVariables = Object.entries(themeColor)
+            .map(([color, scales]) =>
+              Object.entries(scales)
+                .map(
+                  ([scale, value]) =>
+                    `  --${toCssString(color)}-${scale}: ${value};`
+                )
+                .join('\n')
+            )
+            .join('\n\n');
+
+          cssString.push(`${selector} {\n${cssVariables}\n}\n`);
         }
       });
     }
