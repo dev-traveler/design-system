@@ -1,9 +1,14 @@
 {
   "name": "design-system",
   "version": "0.0.1",
+  "workspaces": [
+    "packages/**/*",
+    "services/**/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "packageManager": "yarn@4.3.0"
 }
