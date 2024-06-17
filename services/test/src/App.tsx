@@ -6,7 +6,7 @@ import { classes, vars } from '@dev-traveler/themes';
 import styled from '@emotion/styled';
 
 function App() {
-  console.log('t', classes.typography.heading['2xl']);
+  console.log(vars.box.radius);
   const theme = {
     colors: vars.colors.$static.light,
   };
