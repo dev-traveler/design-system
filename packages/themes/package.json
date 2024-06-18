@@ -22,7 +22,7 @@
   "author": "dev-traveler",
   "license": "ISC",
   "devDependencies": {
-    "esbuild": "^0.16.17",
+    "@dev-traveler/esbuild-config": "workspace:^",
     "typescript": "^5.4.5"
   }
 }
