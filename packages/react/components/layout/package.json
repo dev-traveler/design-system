@@ -15,7 +15,8 @@
     "build": "yarn clean && yarn build:js && yarn build:type",
     "build:js": "node build.js",
     "build:type": "tsc --emitDeclarationOnly",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "dev": "yarn build:js --watch && yarn bulid:type --watch"
   },
   "devDependencies": {
     "@dev-traveler/esbuild-config": "workspace:^",
