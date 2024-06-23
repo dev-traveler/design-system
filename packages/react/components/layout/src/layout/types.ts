@@ -19,5 +19,5 @@ export type FlexProps = {
   justify?: CSSProperties["justifyContent"];
   shrink?: CSSProperties["flexShrink"];
   wrap?: CSSProperties["flexWrap"];
-  gap?: number;
+  gap?: CSSProperties["gap"];
 } & BoxProps;
