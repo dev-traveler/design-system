@@ -15,7 +15,7 @@ export const BoxStory = {
     as: "button",
     padding: "5",
     background: "blue",
-    shadow: "2xl",
-    radius: "md",
+    boxShadow: "2xl",
+    borderRadius: "md",
   },
 };
