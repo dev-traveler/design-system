@@ -10,6 +10,10 @@ export default {
   },
   tags: ["autodocs"],
   argTypes: {
+    as: {
+      options: ["p", "span", "div", "b", "i", "u", "strong", "em"],
+      control: { type: "select" },
+    },
     fontSize: {
       options: Object.keys(classes.typography.text),
       control: { type: "select" },
