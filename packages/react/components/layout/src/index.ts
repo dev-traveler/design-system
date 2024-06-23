@@ -1,5 +1,11 @@
-export { Box, Divider, Flex } from "./layout";
-export type { BoxProps, DivederProps, FlexProps } from "./layout";
+export { Box, Divider, Flex, Grid, GridItem } from "./layout";
+export type {
+  BoxProps,
+  DivederProps,
+  FlexProps,
+  GridProps,
+  GridItemProps,
+} from "./layout";
 
-export { Text } from "./typography";
-export type { TextProps } from "./typography";
+export { Text, Heading } from "./typography";
+export type { TextProps, HeadingProps } from "./typography";
