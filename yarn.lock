@@ -1526,6 +1526,8 @@ __metadata:
     "@types/react-dom": ^18.3.0
     "@vanilla-extract/css": ^1.15.3
     "@vanilla-extract/esbuild-plugin": ^2.3.7
+    "@vanilla-extract/sprinkles": ^1.6.2
+    clsx: ^2.1.1
     react: ^18.3.1
     react-dom: ^18.3.1
     typescript: 5.2.2
@@ -5196,6 +5198,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vanilla-extract/sprinkles@npm:^1.6.2":
+  version: 1.6.2
+  resolution: "@vanilla-extract/sprinkles@npm:1.6.2"
+  peerDependencies:
+    "@vanilla-extract/css": ^1.0.0
+  checksum: e062992dd26fc4b493992af2075a313fb7f3fc0317c5b42969b52e89cab47f11cf9f4ce791efb1b345439640a3cc0d0a03a5d685bac5c524b0613165cc30ce81
+  languageName: node
+  linkType: hard
+
 "@vitejs/plugin-react@npm:^3.0.1":
   version: 3.1.0
   resolution: "@vitejs/plugin-react@npm:3.1.0"
@@ -6361,6 +6372,13 @@ __metadata:
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: d06418b7335897209e77bdd430d04f882189582e67bd1f75a04565f3f07f5b3f119a9d670c943b6697d0afb100f03b866b3b8a1f91d4d02d72c4ecf2bb64b5dd
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: acd3e1ab9d8a433ecb3cc2f6a05ab95fe50b4a3cfc5ba47abb6cbf3754585fcb87b84e90c822a1f256c4198e3b41c7f6c391577ffc8678ad587fc0976b24fd57
   languageName: node
   linkType: hard
 
