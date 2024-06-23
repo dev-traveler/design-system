@@ -11,3 +11,14 @@ export const textStyle = recipe({
     },
   },
 });
+
+export const headingStyle = recipe({
+  variants: {
+    fontSize: {
+      ...classes.typography.heading,
+    },
+    defaultVariants: {
+      fontSize: "xl",
+    },
+  },
+});
